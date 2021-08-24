@@ -22,7 +22,7 @@ class ImportExcelController extends Controller
      * View import Excel file
      */
     public function view()
-    {
+    { 
         // $data = ExcelData::orderBy('id', 'DESC')->get();
         $data = ExcelData::paginate(5);
         return view($this->url . 'import_excel', compact('data'));
@@ -39,7 +39,7 @@ class ImportExcelController extends Controller
         $excel_data = \Excel::import(new ExcelImport, $request->file('file'));
 
         return back()->with('success', 'Excel file uploaded successfully.');
-    }
+    } 
 
     /**
      * Delete Record which uploaded excel file
@@ -51,6 +51,7 @@ class ImportExcelController extends Controller
     }
 
     /**
+     * Download data which stored in database into Excel file
      * @return \Illuminate\Support\Collection
      */
     public function download() 
@@ -59,5 +60,6 @@ class ImportExcelController extends Controller
         $data = $export;
         $data->setContentDisposition('attachment','TimeSheetExport')->getFile()->move(storage_path('excel-file/'), $data->getFile());
         return back()->with('success', 'Records has been downloaded ');
-    }
+    } 
+
 }
