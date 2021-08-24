@@ -1,0 +1,21 @@
+.download-button {
+    width: 75px;
+    height: 24px;
+    padding: unset;
+}
+.delete-button {
+    width: 47px;
+    height: 24px;
+    padding: unset;
+}
+.upload-button {
+    width: 55px;
+    height: 24px;
+    padding: unset;
+}
+
+.upload-button:hover {
+    color: rgba(22, 22, 15, 0.867);
+    background-color: rgba(236, 156, 136, 0.705);
+    border: none;
+}
