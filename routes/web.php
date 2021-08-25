@@ -18,7 +18,7 @@ Route::get('welcome', function () {
     return view('welcome');
 });
 
-Route::get('/import_excel', [ImportExcelController::class, 'view'])->name('view');
+Route::get('/', [ImportExcelController::class, 'view'])->name('view');
 Route::post('/import_excel/import', [ImportExcelController::class, 'import'])->name('import');
 Route::get('/import_excel/delete'.'/{id}', [ImportExcelController::class, 'delete'])->name('delete');
 Route::get('/import_excel/download', [ImportExcelController::class, 'download'])->name('download');
